@@ -15,14 +15,14 @@ This project showcases a high-performance Power BI dashboard built with a focus 
 *   `Table.ReplaceValue` for robust data cleaning and default value logic.
 
 ## 📁 Repository Structure
-
+```
 ├── Advanced_Dashboard.pbit # Power BI Template file (no data)
 ├── /SampleData
 │ └── sample_data.xlsx # Anonymized sample dataset
 ├── /Screenshots
 │ └── dashboard_preview.png # Dashboard overview
 └── README.md # This file
-
+```
 
 ## 🚦 Getting Started
 
