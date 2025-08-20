@@ -131,3 +131,22 @@ let
     ]
 in
     FinalOutput
+// Payment_Lookup
+let
+    Source = Requirements_AllFiles,
+    Payment_Table = Source[Payment_Details],
+    // Add Payment-specific transformations here
+    SetTypes = Table.TransformColumnTypes(Payment_Table, {
+        {"RefNo", Int64.Type},
+        {"PaymentStatus", type text},
+        {"PendingPremium", Int64.Type},  // 1=unpaid, 0=paid
+        {"WeekNum", Int64.Type}
+    }),
+    // Set default for PendingPremium
+    FinalTable = Table.ReplaceValue(
+        SetTypes,
+        null, 0, Replacer.ReplaceValue,
+        {"PendingPremium"}
+    )
+in
+    FinalTable
